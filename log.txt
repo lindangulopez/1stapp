@@ -1,0 +1,2 @@
+error logs
+gitignore not working
