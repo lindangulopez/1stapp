@@ -1,0 +1,132 @@
+Install Java with Apt on Ubuntu 20.04
+
+$ sudo apt update
+
+$ java -version
+
+
+//Command 'java' not found, but can be installed with:
+
+//sudo apt install default-jre              # version 2:1.11-72, or
+//sudo apt install openjdk-11-jre-headless  # version 11.0.7+10-3ubuntu1
+//sudo apt install openjdk-13-jre-headless  # version 13.0.3+3-1ubuntu2
+//sudo apt install openjdk-14-jre-headless  # version 14.0.1+7-1ubuntu1
+//sudo apt install openjdk-8-jre-headless   # version 8u252-b09-1ubuntu1
+
+//install the default Java Runtime Environment (JRE), which will install the JRE from OpenJDK 11:
+
+$ sudo apt install default-jre
+
+//Do you want to continue (Y/n)
+
+Y
+
+$ java -version
+
+//openjdk version "11.0.7" 2020-04-14
+//OpenJDK Runtime Environment (build 11.0.7+10-post-Ubuntu-3ubuntu1)
+//OpenJDK 64-Bit Server VM (build 11.0.7+10-post-Ubuntu-3ubuntu1, mixed mode, sharing)
+
+//Install the Java Development Kit (JDK) 
+
+$ sudo apt install default-jdk
+
+//Do you want to continue (Y/n)
+
+Y
+
+// Verify that the JDK is installed by checking the version of javac, the Java compiler:
+
+$ javac -version
+
+// javac 11.0.7
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+Managing Java
+
+You can have multiple Java installations on one server. You can configure which version is the default for use on the command line by using the update-alternatives command.
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+    sudo update-alternatives --config java
+
+This is what the output would look like if you’ve installed both versions of Java in this tutorial:
+
+Output
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+* 2            /usr/lib/jvm/java-11-oracle/bin/java          1091      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:
+
+Choose the number associated with the Java version to use it as the default, or press ENTER to leave the current settings in place.
+
+You can do this for other Java commands, such as the compiler (javac):
+
+    sudo update-alternatives --config javac
+
+Other commands for which this command can be run include, but are not limited to: keytool, javadoc and jarsigner.
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+Setting the JAVA_HOME Environment Variable
+
+Many programs written using Java use the JAVA_HOME environment variable to determine the Java installation location.
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+To set this environment variable, first determine where Java is installed. Use the update-alternatives command:
+
+ $   sudo update-alternatives --config java
+
+This command shows each installation of Java along with its installation path:
+
+Output
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+  1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+* 2            /usr/lib/jvm/java-11-oracle/bin/java          1091      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number:
+
+In this case the installation paths are as follows:
+
+    OpenJDK 11 is located at /usr/lib/jvm/java-11-openjdk-amd64/bin/java.
+    Oracle Java is located at /usr/lib/jvm/java-11-oracle/jre/bin/java.
+
+Copy the path from your preferred installation. Then open /etc/environment using nano or your favorite text editor:
+
+ $   sudo nano /etc/environment
+
+At the end of this file, add the following line, making sure to replace the highlighted path with your own copied path, but do not include the bin/ portion of the path:
+/etc/environment
+
+JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+
+Modifying this file will set the JAVA_HOME path for all users on your system.
+
+Save the file and exit the editor.
+
+Now reload this file to apply the changes to your current session:
+
+ $   source /etc/environment
+
+Verify that the environment variable is set:
+
+ $   echo $JAVA_HOME
+
+You’ll see the path you just set:
+
+Output
+/usr/lib/jvm/java-11-openjdk-amd64
+
+Other users will need to execute the command source /etc/environment or log out and log back in to apply this setting.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
