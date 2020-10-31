@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support SVG filters.</p>
+
+<svg height="110" width="110">
+  <defs>
+    <filter id="f1" x="0" y="0">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" />
+  Sorry, your browser does not support inline SVG.  
+</svg>
+
+<div></div>
+
+<svg height="120" width="120">
+  <defs>
+    <filter id="f1" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+      <feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f1)" />
+</svg>
+
+<div></div>
+
+<svg height="140" width="140">
+  <defs>
+    <filter id="f2" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f2)" />
+</svg>
+
+<div></div>
+
+<svg height="140" width="140">
+  <defs>
+    <filter id="f3" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceAlpha" dx="20" dy="20" />
+      <feGaussianBlur result="blurOut" in="offOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f3)" />
+</svg>
+
+<div></div>
+
+<svg height="140" width="140">
+  <defs>
+    <filter id="f4" x="0" y="0" width="200%" height="200%">
+      <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="10" />
+      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="90" height="90" stroke="green" stroke-width="3"
+  fill="yellow" filter="url(#f4)" />
+</svg>
+
+<div></div>
+<!-- The available filter elements in SVG are:
+
+<feBlend> - filter for combining images
+<feColorMatrix> - filter for color transforms
+<feComponentTransfer>
+<feComposite>
+<feConvolveMatrix>
+<feDiffuseLighting>
+<feDisplacementMap>
+<feFlood>
+<feGaussianBlur>
+<feImage>
+<feMerge>
+<feMorphology>
+<feOffset> - filter for drop shadows
+<feSpecularLighting>
+<feTile>
+<feTurbulence>
+<feDistantLight> - filter for lighting
+<fePointLight> - filter for lighting
+<feSpotLight> - filter for lighting -->
+</body>
+</html>
