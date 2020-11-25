@@ -1,0 +1,36 @@
+https://www.w3schools.com/java/java_examples.asp
+Java Examples
+Java Syntax
+Java Comments
+Java Variables
+Java Data Types
+Java Type Casting
+Java Operators
+Java Strings
+Java Math
+Java Booleans
+
+Java If...Else (Conditions)
+Java Switch
+Java Loops
+Java Arrays
+Java Methods
+Java Classes and Objects
+Java Modifiers
+Java Encapsulation
+Java Packages
+Java Inheritance
+Java Inner Classes
+Java Abstraction & Interfaces
+Java Enums
+Java User Input
+Java Dates
+Java ArrayList
+Java HashMap
+Java HashSet
+Java Iterator
+Java Wrapper Classes
+Java Exceptions (Try...Catch)
+Java Regular Expressions
+Java Threads
+Java Files
