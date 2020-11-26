@@ -1,0 +1,141 @@
+1.
+Question 1
+Your friend is trying to solve the following problem using Java:
+
+Write a method that finds each occurrence of “abc_” in a String input (where _ is a single character) and prints “bc_” for each such occurrence. For example, findAbc(“abcdefabcghi”) should print:
+
+
+bcd
+bcg
+
+
+You friend has just finished writing a solution and needs help testing it.
+
+Create a new BlueJ project. Create a class and copy and paste the two methods (below) into it.
+
+
+
+/**
+ * Write a description of Question1 here.
+ * 
+ * @Linda 
+ * @26/11/2020
+ */
+public class Question1 {
+public void findAbc(String input) {
+    int index = input.indexOf("abc");
+    while (true) {
+        if (index == -1) {
+            break;
+        }
+       
+        if(index >= input.length() - 4){
+        //error
+        //String found = input.substring(index+1, index+4);
+        //System.out.println(found);
+        index = input.indexOf("abc", index+4);
+        System.out.println(index);
+        System.out.println(input.length());
+    }
+    }
+}
+   public void test() {
+    //findAbc("abcd");
+    findAbc("abcdabc");
+    
+}
+}
+
+
+Test method findAbc() by adding a line in the test() method:
+
+
+ findAbc("abcd");
+
+
+///////////////////////////////////////////////////////
+Do this example by hand. What should the output be if the method is working correctly?
+
+
+ANS: bcd
+
+2.
+Question 2
+Compile your class and run the test() method. What is the output?
+ANS: bcd
+
+
+3.
+Question 3
+So far so good! Comment out the line findAbc("abcd") and add a new line in the test() method:
+
+
+What should the output be if the method is working correctly?
+ANS: bcd
+
+
+4.
+Question 4
+Compile and run your code. Which two of the following are results?
+
+ANS: "bcd" is printed. && A StringIndexOutOfBoundsException is thrown.
+
+5.
+Question 5
+Which line of the program is causing the error?
+
+1 point
+
+ANSString found = input.substring(index+1, index+4);
+
+
+6.
+Question 6
+What is the index that is out of range?
+
+ANS: 8
+
+7.
+Question 7
+What is the length of input for this method call?
+
+ANS: 7
+
+
+8.
+Question 8
+At the time this error is produced, what are the values of index+1 and index+4? You may want to add print statements to your code and run it again to see what these values are.
+
+Enter your answer as numbers separated by a comma: int1, int2. For example if index+1 were 1 and index+4 were 5, you would enter:
+
+ANS: 5,8
+
+9.
+Question 9
+Why does the program throw an index out of bounds exception for this input?
+ANS: The method substring() is trying to access index 8 but the String input is only 7 characters long.
+
+
+10.
+Question 10
+Imagine your friend wants to get help from Coursera classmates on the discussion forums.
+
+Which one of the following would be the most helpful way to describe the problem so that others can easily help?
+
+ANS: My method findAbc() has an index out of bounds exception at the line && 
+&& when I call it with input "abcdabc". It prints "bcd" and then throws the exception. && The index out of range is 8.
+
+11.
+Question 11
+Which of the following are examples of input that would also throw this exception? Check all that are correct.
+
+ANS: "aaaaabc" && "yabcyabc" && "abcbbbabcdddabc"
+
+12.
+Question 12
+Add an if statement, such that the while loop breaks if the index is out of bounds. Compile the code and run it again. It should now print "bcd" without throwing an exception. Try it on the examples you selected the previous question to make sure it works.
+
+What are possible conditions for this if statement? (Choose all that are correct.)
+
+ANS: index >= input.length() - 3 && index > input.length() - 3
+
