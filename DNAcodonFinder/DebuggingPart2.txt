@@ -1,0 +1,137 @@
+Debugging: Part 2
+TOTAL POINTS 11
+1.
+Question 1
+You have fixed one bug in your friend’s code, so that it no longer throws an index out of bounds exception, by adding the condition index >= input.length() - 3:
+
+
+/*public void findAbc(String input){
+       int index = input.indexOf("abc");
+       while (true){
+           if (index == -1 || index >= input.length() - 3){
+               break;
+           }
+           String found = input.substring(index+1, index+4);
+           System.out.println(found);
+           index = input.indexOf("abc",index+4);
+       }
+   }
+
+   public void test(){
+       //findAbc("abcd");
+       findAbc("abcdabc");
+   }
+*/
+
+Let’s test some more. Run the above code with input “abcdkfjsksioehgjfhsdjfhksdfhuwabcabcajfieowj”. What is the output?
+
+Enter your answer with the printed strings separated by commas, str1, str2. For example, if the output were “bcq”, “bcd”, and “bcu”, you would write: bcq, bcd, bcu
+
+ANS: bcd, bca
+
+2.
+Question 2
+Check this answer – do the problem by hand. What should be the correct output for input “abcdkfjsksioehgjfhsdjfhksdfhuwabcabcajfieowj”?
+
+Enter your answer with the printed strings separated by commas, str1, str2. For example, if the output were “bcq”, “bcd”, and “bcu”, you would write: bcq, bcd, bcu
+
+ANS: bcd, bca, bca
+
+3.
+Question 3
+You will have to do some debugging, since the output wasn’t what you were expecting. Let’s see which occurrences of “abc” the program is finding. Add a line to print the index before found is calculated.
+
+What are the indices printed? Select all that are correct.
+
+ANS: 0 && 30
+
+
+4.
+Question 4
+You can see that the program is finding the first two occurrences of “abc” but not the third. The while loop is breaking without finding this occurrence. So we know that when the variable index is updated after finding the second occurrence of “abc” at index 30, it must be updated either to -1 or to something greater than or equal to the length of input – 3. Let’s see which it is.
+
+Add a print statement. You might find it helpful to distinguish this from the print statement you added earlier so you can more easily see which is the index before updating and which is the index after. For example, you might do something like:
+
+
+/*
+System.out.println("index " + index);
+//code
+System.out.println("index after updating " + index);
+*/
+
+What is the value of index after updating for the last time?
+ANS: -1
+
+5.
+Question 5
+Now we can tell that the code isn’t finding the last occurrence of “abc” even though we can see that a third occurrence exists. At what index should the third occurrence of “abc” be found?
+
+ANS: 33
+
+
+6.
+Question 6
+After the program finds the 2nd occurrence of “abc”, at what index does it start searching for the 3rd occurrence?
+
+Hint: look at the line index = input.indexOf("abc",index+4);
+
+ANS: 34
+
+7.
+Question 7
+What are some other examples of input that would also have this problem? Select all that are correct.
+
+ANS: “kdabcabcjei” && “abcabcabcabca”
+
+
+8.
+Question 8
+Imagine your friend wants to get help from Coursera classmates on the discussion forums. Which of the following would be the most helpful way to describe the problem so that others can easily help?
+
+ANS: 
+My method findAbc() works on “abcdabc” but is giving me the wrong answer with input “abcdkfjsksioehgjfhsdjfhksdfhuwabcabcajfieowj”: it prints “bcd, bca” when it should print “bcd, bca, bca”. It also gives the wrong answer with input “kdabcabcjei”, it prints “bca” when it should print “bca, bcj”.
+
+
+9.
+Question 9
+What is causing this bug?
+
+ANS: 
+
+When one occurrence of “abc” is followed immediately by another occurrence of “abc”, the method does not find the second “abc” because it starts searching at the “b” rather than at the “a” following the first “abc”
+
+
+10.
+Question 10
+Which change needs to be made to fix the bug?
+
+1 / 1 point
+
+Change the line
+
+
+/*
+index = input.indexOf("abc",index+4);
+*/
+
+to
+
+
+/*
+index = input.indexOf("abc",index+3);
+*/
+
+
+
+Now the program will begin searching after the occurrence of "abc" rather than after the "bc_" following the "abc".
+
+11.
+Question 11
+Make the change. Test your method on the input options that would have caused the bug (see question 7). What is the output when you run it with input “abcabcabcabca”?
+
+Enter your answer with the printed strings separated by commas, str1, str2. For example, if the output were “bcq”, “bcd”, and “bcu”, you would write: bcq, bcd, bcu
+
+0 / 1 point
+bca
+Incorrect
+Check the change you have made to your program in question 10.
