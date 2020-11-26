@@ -1,0 +1,63 @@
+1.
+Question 1
+Which one of the following is the first gene for this strand of DNA where you want to consider all three of the stop codons?
+“AATGCTAACTAGCTGACTAAT”
+
+/*
+    final String START_ATG = "ATG";
+    final String END_TAG = "TAG";
+    final String END_TGA = "TGA";
+    final String END_TAA = "TAA";
+    final String CODON_CTG = "CTG";
+
+*/
+
+not(CTAASTAGC; ATGCTA; empty)
+
+2.
+Question 2
+Consider the following code segment to count the number of times the string “TG” occurs in the string dna, that does not work correctly.
+
+/* 
+
+String dna = "CTGCCTGCATGATCGTA";
+int pos = dna.indexOf("TG");
+int count = 0;
+while (pos >= 0) {
+  count = count + 1;
+  pos = dna.indexOf("TG",pos);
+}
+System.out.println(count);
+
+*/
+
+Finds the same TG
+
+3.
+Question 3
+Consider the following segment of code from a program.
+
+/*
+while (count < 3) {
+  count += 1;
+  newDna = newDna + dna.substring(startPos,pos);
+  startPos = pos+1;
+  pos = dna.indexOf("T", startPos);
+  if (pos == -1) {
+    break;
+  }
+}
+
+*/
+
+Two ways to break out: break; & while (count < 3)
+
+Question 4
+Which one of the following conditionals correctly evaluates to true if the integer num is an odd number and to false if it is an even number.
+
+/*
+if (num % 2 == 1)
+
+*/
+
+Example: 2%2 = 0 [false] & 3%2 = 1 [true]
