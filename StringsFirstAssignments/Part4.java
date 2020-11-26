@@ -1,5 +1,15 @@
-public class URLFINDER
-{
+package StringsFirstAssignments;
+import edu.duke.*;
+import java.io.File;
+
+
+/**
+ * Write a description of Part3 here.
+ * 
+ * @Linda 
+ * @26/11/2020
+ */
+public class Part4 {
     public void asd(){
         URLResource file = new URLResource("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
         for ( String item : file.words() ) {
@@ -10,8 +20,11 @@ public class URLFINDER
                 int end = item.indexOf("\"", pos + 1);
                 System.out.println(item.substring(beg + 1, end));
         }
+		
     }
+	    
   }
+	
 }
 
 
