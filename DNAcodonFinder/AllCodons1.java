@@ -10,38 +10,42 @@ package Strings;
 import edu.duke.*;
 import java.io.*;
 
-public class AllCodons {
+public class AllCodons1 {
 
-    public String findStopCondon(String dnaStr, int startIndex,String stopCodon) {
+    public String findStopCondon(String dnaStr, int startIndex, String stopCodon) {
         int currIndex = dnaStr.indexOf(stopCodon, startIndex+3);
-        
+       
         while (currIndex != -1) {
-            if((currIndex - startIndex)%3 == 0) {
-                return currIndex;
+            int diff = (currIndex - startIndex);
+            if(diff % 3 == 0) {
+               return currIndex;
              }
             else {
                  currIndex = dnaStr.indexOf(stopCodon, currIndex+1);
                  }
              
                 }
-                return "No Gene sequence found."; 
+                return dnaStr.length(); 
         }
         
-         public String findGene(String dna) {
+   public String findGene(String dna) {
         int startIndex = dna.indexOf("ATG");
         int currIndex = dna.indexOf("TAG", startIndex+3);
-        while (currIndex != -1) {
-            if((currIndex - startIndex)%3 == 0) {
-                return dna.substring(startIndex,currIndex);
-             }
-            else {
-                 currIndex = dna.indexOf("TAA", currIndex+1);
-                 }
-             
-                }
-                return ""; 
-    }
-      
+        if (startIndex != -1) {
+        return ""; 
+        }
+        int taaIndex = findStopCondon(dna, startIndex, "TAA");
+        int tagIndex = findStopCondon(dna, startIndex, "TAG");
+        int tgaIndex = findStopCondon(dna, startIndex, "TGA");
+        int temp = Math.min(taaIndex, tagIndex);
+        int minIndex = Math.min(temp, tgaIndex);
+        if (minIndex ==dna.length()){
+        return "";
+        }
+        return dna.substring(startIndex, minIndex+3);          
+                    
+        }
+            
               public void testFindStop() {
             //            012345678901234567890123456789
             String dna = "xxxyyyzzzTAAxxxyyyTAAxx";
