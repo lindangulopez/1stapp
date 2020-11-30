@@ -1,5 +1,4 @@
-Course Specific Classes
-see: https://www.dukelearntoprogram.com/course2/doc/javadoc/index-all.html
+[Course Specific Classes](https://www.dukelearntoprogram.com/course2/doc/javadoc/index-all.html)
 The methods included in these tables are the ones used in this course, and the most commonly useful methods of each class.
 Links are provided to the complete documentation if you are interested.
 
