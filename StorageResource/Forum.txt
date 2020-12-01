@@ -1,0 +1,103 @@
+Thirteen Gene Examples
+Marcel MerchatMentorWeek 2 · a year ago · Edited
+Make up some trial strings of DNA with known genes in it. Find cases where the code does not work. Your code should only find one gene in this string:
+
+"nonCodingDNAxxxMyGeneATGmyGenexTAAxxGeneATGTAACATGTAAATGCendTAATAAnonCodingDNAxTAGxTGA";
+
+There is only one gene in the above string beginning at Position-21.
+
+ATGmyGenexTAAxxGeneATGTAACATGTAAATGCendTAA
+
+As you keep searching for another instance of a possible stop codon, the you will find a longer gene. Since your next search starts only past the end of the previous gene, this might reduce the number of genes that would be possible otherwise.
+
+String dna13genes =
+
+"oneAtGMyGeneOneAATGGGGTAATGATAGAACCCGGYGGGGTAGGGCTGCCCATGendOneTAAnonCodingDnaTAGTGAZZZtaaTwoATGMyGeneTwoCATGGGGTAATGATAGCCatgCCCFalseStartTAATGATGendTwoTAGnonCodingDNATAACCCThreeATGMyGeneThreeATGGGGTAATGATAGATGccendThreeTAAnonCodingDNAccTAAfalsecccFourATGMyGeneFourATGGGGTAATGATAGCendFourTAGnonCodingdnaFiveAtgMyGeneFiveATGGGGTAATGATAGCendFiveTGAnonCodingdnaSixATGmyGeneSixATATGGGGTAATGATAGAendSixTAAnoncodingdnaSevenATGMyGeneSevenCcATGGGGTAATGATAGendSeventaAnoncodingdnaEightATGmyGeneEightATGGGGTAATGATAGGGendEighttaAnoncodingdnaCcccWrongtgaCtaaCtagCCcgNineATgmyGeneNineATGGGGTAATGATAGTaaAendNineTAAnonCodingDnaCcccTenATGmyGeneTenGATGGGGTAATGATAGCCHasFakeATGFAKEatgcendTentaanonCodingDnaCtagCtganonCodingDnaxxxElevenATGmyGeneElevenCATGGGGTAATGATAGTAAxxGeneATGTAACATGTAAATGCendElevenTAAnonCodingDnaxTAGxtgaTwelveATGmyGeneTwelveCATGGGGTAATGATAGCTheLastGeneIsATGTAGendTwelvetgaATGTAG";
+
+There are a total of 13 genes:
+
+AtGMyGeneOneAATGGGGTAATGATAGAACCCGGYGGGGTAGGGCTGCCCATGendOneTAA
+
+The length is 63
+
+The CG ratio is 0.412698
+
+ATGMyGeneTwoCATGGGGTAATGATAGCCatgCCCFalseStartTAATGATGendTwoTAG
+
+The length is 63
+
+The CG ratio is 0.285714
+
+ATGMyGeneThreeATGGGGTAATGATAGATGccendThreeTAA
+
+The length is 45
+
+The CG ratio is 0.244444
+
+ATGMyGeneFourATGGGGTAATGATAGCendFourTAG
+
+The length is 39
+
+The CG ratio is 0.25641
+
+AtgMyGeneFiveATGGGGTAATGATAGCendFiveTGA
+
+The length is 39
+
+The CG ratio is 0.25641
+
+ATGmyGeneSixATATGGGGTAATGATAGAendSixTAA
+
+The length is 39
+
+The CG ratio is 0.205128
+
+ATGMyGeneSevenCcATGGGGTAATGATAGendSeventaA
+
+The length is 42
+
+The CG ratio is 0.238095
+
+ATGmyGeneEightATGGGGTAATGATAGGGendEighttaA
+
+The length is 42
+
+The CG ratio is 0.285714
+
+ATgmyGeneNineATGGGGTAATGATAGTaaAendNineTAA
+
+The length is 42
+
+The CG ratio is 0.190476
+
+ATGmyGeneTenGATGGGGTAATGATAGCCHasFakeATGFAKEatgcendTentaa
+
+The length is 57
+
+The CG ratio is 0.245614
+
+ATGmyGeneElevenCATGGGGTAATGATAGTAAxxGeneATGTAACATGTAAATGCendElevenTAA
+
+The length is 69
+
+The CG ratio is 0.217391
+
+ATGmyGeneTwelveCATGGGGTAATGATAGCTheLastGeneIsATGTAG
+
+The length is 51
+
+The CG ratio is 0.254901
+
+ATGTAG
+
+The length is 6
+
+The CG ratio is 0.333333
+
+There are 12 strings with CG ratio above 0.2. There are 13 genes of length 6 or more characters. The total number of genes is 13
+
+The longest gene is: ATGmyGeneElevenCATGGGGTAATGATAGTAAxxGeneATGTAACATGTAAATGCendElevenTAA
+
+It has a length of 69 characters.
+
+Marcel Merchat
