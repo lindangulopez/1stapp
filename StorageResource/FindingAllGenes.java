@@ -7,6 +7,8 @@
  * 01/12/2020
  */
 import edu.duke.*;
+import java.io.File;
+import java.lang.Math;
 public class AllGenesStored {
     public int findStopCodon(String dnaStr,
                              int startIndex, 
