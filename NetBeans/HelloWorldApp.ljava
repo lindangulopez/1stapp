@@ -1,0 +1,48 @@
+/*
+*TODO code application logic here:
+/**
+ * The HelloWorldApp class implements an application that
+ * simply prints "Hello World!" to standard output.
+ */
+ package com.mycompany.helloworldapp;
+
+/**
+ *
+ * @author lindangulopez
+ */
+public class HelloWorldApp {
+        /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        System.out.println("Hello World!"); // Display the string.
+    }
+    
+}
+
+/*
+cd /home/lindangulopez/NetBeansProjects/HelloWorldApp; JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 /snap/netbeans/35/netbeans/java/maven/bin/mvn "-Dexec.args=-classpath %classpath com.mycompany.helloworldapp.HelloWorldApp" -Dexec.executable=/usr/lib/jvm/java-11-openjdk-amd64/bin/java -Dexec.classpathScope=runtime process-classes org.codehaus.mojo:exec-maven-plugin:1.5.0:exec
+Scanning for projects...
+
+--------------------< com.mycompany:HelloWorldApp >---------------------
+Building HelloWorldApp 1.0-SNAPSHOT
+--------------------------------[ jar ]---------------------------------
+
+--- maven-resources-plugin:2.6:resources (default-resources) @ HelloWorldApp ---
+Using 'UTF-8' encoding to copy filtered resources.
+skip non existing resourceDirectory /home/lindangulopez/NetBeansProjects/HelloWorldApp/src/main/resources
+
+--- maven-compiler-plugin:3.1:compile (default-compile) @ HelloWorldApp ---
+Changes detected - recompiling the module!
+Compiling 1 source file to /home/lindangulopez/NetBeansProjects/HelloWorldApp/target/classes
+
+--- exec-maven-plugin:1.5.0:exec (default-cli) @ HelloWorldApp ---
+Hello World!
+------------------------------------------------------------------------
+BUILD SUCCESS
+------------------------------------------------------------------------
+Total time:  2.244 s
+Finished at: 2020-12-02T10:23:17+01:00
+------------------------------------------------------------------------
+
+*/
